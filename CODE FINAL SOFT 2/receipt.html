@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Receipt</title>
+    <link rel="shortcut icon" href="fav.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
+
+    <style>
+        
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+
+        }
+
+        .receipt {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        .receipt-header {
+            text-align: center;
+        }
+
+        .receipt-logo {
+            height: 100px;
+        }
+
+        .receipt-title {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+            border: 5px solid black;
+            border-radius: 25px;
+            background-color: lightgray;
+        }
+
+        .receipt-customer-details{
+            margin: 10px 0;
+            border: 2px solid;
+            border-style: solid;
+            padding-left: 20px;
+            border-radius: 10px;
+        }
+
+
+        .receipt-customer-details input{
+            font-family: 'Jetbrains Mono';   
+        }
+
+
+
+
+        .receipt-customer-details p{
+            display: inline-block;
+            width: 100px;
+            height: 410x;
+            font-weight: bold;
+        }
+
+
+        .customer-detail {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        
+
+        .receipt-details {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        .receipt-details h2{
+            text-align: center;
+        }
+
+
+
+        .receipt-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .receipt-item-description {
+            flex-grow: 2;
+        }
+
+        .receipt-item-price {
+            flex-basis: 30%;
+        }
+
+        .receipt-total {
+            font-family: 'Jetbrains Mono';
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 20px;
+/*            color: #f58725;*/
+            color: navy;
+            text-align: center;
+        }
+
+        .delivery-fee {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid;
+            background-color: lightgray;
+            border-radius: 10px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        #info {
+            text-align: center;
+            text-decoration: overline;
+        }
+
+        #cart-items {
+            font-family: 'jetbrains mono';
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <div class="receipt-header">
+            <img src="banner.jpg" alt="Logo" class="receipt-logo">
+            <h1 class="receipt-title">Order Receipt</h1>
+        </div>
+
+        <div class="receipt-customer-details">
+            <h2 id = "info">Customer Information</h2>
+            <form id="customer-info-form">
+                <div class="customer-detail">
+                    <label for="customer-name"> <p>Name:</p> </label>
+                    <input type="text" id="customer-name" name="customer-name" required>
+                </div>
+                <div class="customer-detail">
+                    <label for="customer-address"><p>Address:</p></label>
+                    <input type="text" id="customer-address" name="customer-address" required>
+                </div>
+                <div class="customer-detail">
+                    <label for="customer-phone"><p>Phone:</p></label>
+                    <input type="text" id="customer-phone" name="customer-phone">
+                </div>
+            </form>
+        </div>
+
+        <div class="receipt-details">
+            <h2>Purchased Products</h2>
+            <ul id="cart-items">
+                <!-- Cart items from the shopping cart page will be displayed here -->
+            </ul>
+        </div>
+
+        <div class="delivery-fee">Delivery Fee: 60 BDT</div>
+
+        <div class="receipt-total" id="receipt-total">
+            <!-- The calculated total including delivery fee will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // Parse the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const cartItems = JSON.parse(urlParams.get('cartItems'));
+        const customerName = urlParams.get('customerName');
+        const customerAddress = urlParams.get('customerAddress');
+        const customerPhone = urlParams.get('customerPhone');
+        const receiptTotal = parseFloat(urlParams.get('total'));
+
+        // Update the customer information fields
+        document.getElementById('customer-name').value = customerName;
+        document.getElementById('customer-address').value = customerAddress;
+        document.getElementById('customer-phone').value = customerPhone;
+
+        // Calculate the total including delivery fee
+        const totalIncludingDelivery = receiptTotal + 60;
+
+        // Update the receipt total
+        document.getElementById('receipt-total').textContent = `Total (Including Delivery Fee): ${totalIncludingDelivery.toFixed(2)} BDT`;
+
+        // Display purchased products in the receipt
+        const cartItemsElement = document.getElementById('cart-items');
+        cartItems.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Product: ${item.product}, ${item.ingredient} (${item.quantity}x) - ${item.price.toFixed(2)} BDT`;
+            cartItemsElement.appendChild(listItem);
+        });
+    </script>
+<p>THANK YOU FOR SHOPPING FROM iotbd.com!!</p>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;800&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://i.imgur.com/WaoqB6s.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* Reset some default browser styles */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Recipe card styles */
+        .recipe-card {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            width: calc(33.33% - 40px);
+        }
+
+        .recipe-card img {
+            max-width: 100%;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        ul {
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        select, input {
+            padding: 10px;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Header styles */
+        header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            background-color: black;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        /* Shopping cart styles */
+        .shopping-cart {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        .shopping-cart h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .shopping-cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .shopping-cart li {
+            margin: 10px 0;
+        }
+
+        .shopping-cart a {
+            display: inline-block;
+            background-color: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* Customer information form styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        #cinfo {
+            text-align: center;
+            font-family: 'poppins';
+            text-decoration: none;
+        }
+
+        #tot {
+            font-family: 'jetbrains mono';
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            padding: 10px;
+            width: 100%;
+        }
+
+        header {
+            font-family: 'poppins';
+        }
+
+        #carttext {
+            border-radius: 5%;
+            border: 5px dotted white;
+            display: inline-block;
+            padding-left:30px;
+            padding-right: 30px;
+        }
+
+        #randomtext {
+            color: orange;
+            text-decoration: overline;
+        }
+
+        body {
+            background-color: lightgray;
+        }
+
+        .form-group {
+            width: 700px;
+        }
+
+        #box2 #title {
+            font-family: 'jetbrains mono';
+            background-color: lightgray;
+            border-radius: 10px;
+            height: 50px;
+            padding-top: 15px;
+            text-align: center;
+        }
+
+        #cart-items {
+            margin-top: 50px;
+            font-family: 'jetbrains mono';
+            text-align: center;
+            border: 5px solid black;
+            border-radius: 10px;
+        }
+
+        #tot {
+            margin-top: 40px;
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        #checkout {
+            font-family: 'jetbrains mono';
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        #checkout:hover {
+
+            color: black;
+            background-color: green;
+            border:5px solid black;
+        }
+
+        #ingredient1 {
+            font-family: 'jetbrains mono';
+        }
+
+        label {
+            font-family: 'poppins';
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="banner.jpg" alt="Logo" >
+        </div>
+        <h1 id="carttext">Your Cart</h1>
+        <p id="randomtext">Review the items in your shopping cart and proceed to checkout.</p>
+    </header>
+
+    <div class="container" id="box1">
+        <div class="recipe-card">
+            <h2>Purchased Products</h2>
+            <label for="ingredient1">Select Ingredient:</label>
+            <select id="ingredient1" name="ingredient1">
+                <option value="Nordic">Nordic Module</option>
+                <option value="WiFi">WiFi Relay</option>
+                <option value="IoT">IoT Book</option>
+                <option value="Keystudio">Keystudio Smart Home</option>
+                <option value="Xiaomi">Xiaomi Fan</option>
+                <option value="Asus">Asus Motherboard i5</option>
+                <option value="Radio">Radio Wave SD</option>
+                <option value="Amazfit ">Amazfit Balance</option>
+                <option value="IOT_Based_AIR">IOT Based AIR</option>
+                <option value="Hair_Remover">Hair Remover</option>
+                <option value="Smart_IOT_Air_Cooler">Smart IOT Air Cooler</option>
+                <option value="SMART_DOOR_LOCK">SMART DOOR LOCK</option>
+                
+                
+            </select>
+            <label for="quantity1">Quantity:</label>
+            <input type="number" id="quantity1" name="quantity1" min="1" value="1" >
+            <h2 style="font-family: 'poppins';">Total:  <span id="total1">0.00</span></h2>
+            <a href="#" class="add-to-cart" data-product="Product Name 1">Add to Cart</a>
+        </div>
+
+        
+    </div>
+
+    <div class="container" id="box2">
+        <div class="shopping-cart">
+            <h2 id="title">Shopping Cart</h2>
+            <ul id="cart-items">
+                
+            </ul>
+            <h2 id="tot">Total: <span id="cart-total">0.00</span></h2>
+            
+            <h2 id="cinfo">Customer Information</h2>
+
+            <div id="eta">
+                
+                <div id="majh">
+                    
+                    <form id="customer-info-form">
+                    <div class="form-group">
+                    <label for="customer-name">Name:</label>
+                    <input type="text" id="customer-name" name="customer-name" required>
+                    </div>
+                    <div class="form-group">
+                    <label for="customer-address">Address:</label>
+                    <input type="text" id="customer-address" name="customer-address" required>
+                    </div>
+                    <div class="form-group">
+                    <label for="customer-phone">Phone:</label>
+                    <input type="text" id="customer-phone" name="customer-phone" required>
+                    </div>
+                    <a href="receipt.html" id="checkout">Proceed to Checkout</a>
+                    </form>
+
+            </div>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <script>
+        // Initialize cart data as an empty array
+        var cartData = [];
+
+        // Ingredient prices
+        var ingredientPrices = {
+            Nordic: 566,
+            Xiaomi: 2750,
+            WiFi: 1200,
+            Iot: 5350,
+            Keystudio: 7000,
+            Asus: 9700,
+            Radio:5000,
+            IOT_Based_AIR:3600,
+            Hair_Remover:8900,
+            Smart_IOT_Air_Cooler:3600,
+            SMART_DOOR_LOCK:5600,
+
+
+            
+            // Add prices for other ingredients
+        };
+
+        // Function to calculate the total price
+        function calculateTotal() {
+            var total = 0;
+
+            // Loop through the items in the cartData array
+            for (var i = 0; i < cartData.length; i++) {
+                var item = cartData[i];
+                var price = ingredientPrices[item.ingredient] || 0;
+                total += price * item.quantity;
+            }
+
+            return total;
+        }
+
+        // Function to update the shopping cart
+        function updateCart() {
+            var cartItems = document.getElementById("cart-items");
+            var cartTotal = document.getElementById("cart-total");
+
+            // Clear the cart
+            cartItems.innerHTML = "";
+
+            // Calculate the total price
+            var total = calculateTotal();
+            console.log(total);
+            // Loop through cart data and display items
+            cartData.forEach(function (item, index) {
+                var li = document.createElement("li");
+                li.textContent = `${item.ingredient} x${item.quantity}`;
+                cartItems.appendChild(li);
+            });
+
+            // Display the total price with "BDT" sign
+            cartTotal.textContent = ` BDT ${total.toFixed(2)}`;
+
+            // Update the checkout link
+            var checkoutLink = document.getElementById("checkout");
+            checkoutLink.href = `receipt.html?total=${total}&cartItems=${JSON.stringify(cartData)}`;
+        }
+
+        // Function to handle adding items to the cart
+        function addToCart(product, ingredient, quantity, price) {
+            // Push the item data to the cartData array
+            cartData.push({ product, ingredient, quantity, price });
+
+            // Update the shopping cart display
+            updateCart();
+        }
+
+        // Attach change event listeners to the ingredient select boxes
+        var ingredientSelects = document.querySelectorAll("select[name^='ingredient']");
+        ingredientSelects.forEach(function (select, index) {
+            select.addEventListener("change", function () {
+                var quantity = parseInt(document.getElementById(`quantity${index + 1}`).value);
+                var ingredient = this.value;
+                var price = ingredientPrices[ingredient] || 0;
+                var total = price * quantity;
+                document.getElementById(`total${index + 1}`).textContent = `BDT ${total.toFixed(2)}`;
+
+                // Update the shopping cart when ingredient changes
+                updateCart();
+            });
+        });
+
+        // Attach click event listeners to the "Add to Cart" links
+        var addToCartButtons = document.querySelectorAll(".add-to-cart");
+        addToCartButtons.forEach(function (button, index) {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+                var product = this.getAttribute("data-product");
+                var ingredient = document.getElementById(`ingredient${index + 1}`).value;
+                var quantity = parseInt(document.getElementById(`quantity${index + 1}`).value);
+                var price = ingredientPrices[ingredient] || 0;
+
+                addToCart(product, ingredient, quantity, price);
+            });
+        });
+
+        // Add this script to update the checkout link
+        var checkoutLink = document.getElementById("checkout");
+        checkoutLink.addEventListener("click", function (event) {
+            // Get customer information
+            var customerName = document.getElementById("customer-name").value;
+            var customerAddress = document.getElementById("customer-address").value;
+            var customerPhone = document.getElementById("customer-phone").value;
+
+            // Construct the checkout link with customer information
+            var checkoutURL = `receipt.html?total=${calculateTotal()}&cartItems=${JSON.stringify(cartData)}&customerName=${customerName}&customerAddress=${customerAddress}&customerPhone=${customerPhone}`;
+            checkoutLink.href = checkoutURL;
+        });
+    </script>
+</body>
+</html>
+

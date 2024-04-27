@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="5843.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <title>iotbd</title>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="#">iotbd.com</a></div>
+      <div class="menu">
+        <a href="#">
+          <ion-icon name="close" class="close"></ion-icon>
+        </a>
+  
+        <ul>
+          <li><a href="#" class="under">HOME</a></li>
+          <li><a href="#" class="under">SHOP</a></li>
+          <li><a href="#" class="under">OUR PRODUCTS</a></li>
+          <li><a href="#" class="under">CONTACT US</a></li>
+          <li><a href="#" class="under">ABOUT US</a></li>
+        </ul>
+      </div>
+      <div class="search">
+  
+        <a href=""><input type="text" placeholder="search products" id="input">
+          <ion-icon class="s" name="search"></ion-icon>
+        </a>
+      </div>
+      <div class="heading">
+        <ul>
+          <li><a href="#" class="under">HOME</a></li>
+          <li><a href="cart.html" class="under">SHOP</a></li>
+          <li><a href="#" class="under">OUR PRODUCTS</a></li>
+          <li><a href="#" class="under">CONTACT US</a></li>
+          <li><a href="#" class="under">ABOUT US</a></li>
+        </ul>
+      </div>
+      <div class="heading1">
+        <ion-icon name="menu" class="ham"></ion-icon>
+      </div>
+    </header>
+
+    <section>
+       <div class="section">
+            <div class="section1">
+                <div class="img-slider">
+                  <img src="https://images.pexels.com/photos/21284445/pexels-photo-21284445/free-photo-of-smart-home-devices-empty-screen-mockup.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img">
+                  <img src="https://images.pexels.com/photos/22307556/pexels-photo-22307556/free-photo-of-smart-home-devices-equipment-screen-mockup.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img">
+                  <img src="https://images.pexels.com/photos/1990764/pexels-photo-1990764.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" class="img">
+                  <img src="https://images.pexels.com/photos/919734/pexels-photo-919734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img">
+                  <img src="https://images.pexels.com/photos/1476321/pexels-photo-1476321.jpeg?auto=compress&cs=tinysrgb&w=600?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img">
+                </div>
+        
+              </div>
+              <div class="section2">
+
+            <div class="container">
+                <!-- Product 1 -->
+                <div class="items">
+                    <div class="img img1"><img src="https://lh6.googleusercontent.com/proxy/qPZJwA15k8Yjs6O-ncZjoIcePpNJ52GJ0l1TMYFSICubv2k9KYhTkcEBztEFZvtdpPNb4Tks08DMBFGbRrVvxYEskypQe5kEjsZL8nNv3BF1FM2n?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""></div>
+                    <div class="name">Nordic nRF51822 4.0 module</div>
+                    <div class="price">TK 566</div>
+                    <div class="info">Best prize, Best deals.</div>
+                    <button onclick="addToCart('Nordic nRF51822 4.0 module', 5)">Add to Cart</button>
+                    <a href="product-details.html?product=Nordic nRF51822 4.0 module">View Details</a>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="items">
+                    <div class="img img2"><img src="https://static-01.daraz.com.bd/p/20bbdc2e852b14d871f7fe2e82c9c5e4.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                    <div class="name">WIFI Relay Controller Module</div>
+                    <div class="price">TK634.00</div>
+                    <div class="info">The Deal You Need</div>
+                    <button onclick="addToCart('WIFI Relay Controller Module', 8.84)">Add to Cart</button>
+                    <a href="product-details.html?product=WIFI Relay Controller Module">View Details</a>
+                </div>
+
+                <div class="items">
+                    <div class="img img3"><img src="data:image/jpeg;base64,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" alt=""></div>
+                    <div class="name">SONOFF 1080P HD Wi-Fi IOT Camera</div>
+                    <div class="price">TK 4500</div>
+                    <div class="info">Best Security IoT cam in BD(Currently Stock Out)</div>
+                    <button onclick="addToCart('SONOFF 1080P HD Wi-Fi IOT Camera', 7.34)">Add to Cart</button>
+                    <a href="product-details.html?product=SONOFF 1080P HD Wi-Fi IOT Camera">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://ueeshop.ly200-cdn.com/u_file/UPAH/UPAH808/2308/photo/3e985e6759.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""></div>
+                    <div class="name">Keyestudio ESP32 Smart Farm</div>
+                    <div class="price">TK 7000</div>
+                    <div class="info">Hot prize,Cool deal.</div>
+                    <button onclick="addToCart('Keyestudio ESP32 Smart Farm ', 7.12)">Add to Cart</button>
+                    <a href="product-details.html?product=Keyestudio ESP32 Smart Farm Kit IOT Kit With ESP32 Board For Arduino Scratch 3.0 Graphical Programming DIY Smart Starter Kit">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Amazfit_Balance_15_Inch_HD_Amoled_Smart_-Amazfit-4b2ab-359424.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""></div>
+                    <div class="name">Amazfit Balance 1.5 </div>
+                    <div class="price">TK 31500</div>
+                    <div class="info">The Watch you need.</div>
+                    <button onclick="addToCart('Amazfit Balance 1.5 Inch', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=Amazfit Balance 1.5 Inch HD Amoled Smart Watch Midnight Black">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/XIAOMI_SOLOVE_Desktop_Stand_Fan_F5_5W_40-Xiaomi-b8a96-239878.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""></div>
+                    <div class="name">Xiaomi 4000mah Fan</div>
+                    <div class="price">TK 2750</div>
+                    <div class="info">Ei Gorome,Hawa Khan Arame(Out of Stock)</div>
+                    <button onclick="addToCart('Xiaomi 4000mah Fan', 8.34)">Add to Cart</button>
+                    <a href="product-details.html?product=Xiaomi 4000mah Fan">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Mastering_IOT-Colin_Dow-b7143-229334.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                    <div class="name">IoT book</div>
+                    <div class="price">TK 5350</div>
+                    <div class="info">Best prize,The IoT book you need(STOCK OUT).</div>
+                    <button onclick="addToCart('Best prize,The IoT book you need', 5.34)">Add to Cart</button>
+                    <a href="product-details.html?product=Best prize,The IoT book you need(STOCK OUT)">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/rokimg_20150412_98675.gif" alt=""></div>
+                    <div class="name">GIGABYTE Motherboard</div>
+                    <div class="price">TK 10000</div>
+                    <div class="info">Best prize,Best deals.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/rokimg_20150412_98664.gif?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                    <div class="name">ASUS Motherboard i5</div>
+                    <div class="price">TK 9700</div>
+                    <div class="info">Best prize,Best deals.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  
+              
+<div class="items">
+                    <div class="img img1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL2GWiZsr4KoGQFFpD9iY5TQzx_Tlo0xAdwCJYotNX0IB_qRzcMAr2_Q5xmRFozZ44ejA&usqp=CAU?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                    <div class="name">Router</div>
+                    <div class="price">TK1200</div>
+                    <div class="info">Best prize,Best deal.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 5.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpHzrqJfiehbWx6BHnj5htTSITjwJEc15eYg&s" alt=""></div>
+                    <div class="name">Radio Wave Signal Detect Camera</div>
+                    <div class="price">TK5000</div>
+                    <div class="info">Best prize,Best deals.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRj32vOCSeTNfayfhi2YoJWOFFzumvEW0EIQ&s?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                    <div class="name">DIN-Rail Serial Port RS485 </div>
+                    <div class="price">TK1900.9</div>
+                    <div class="info">Best prize,Best deals.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://images.pexels.com/photos/2659939/pexels-photo-2659939.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                    <div class="name">LAPTOP</div>
+                    <div class="price">TK53000</div>
+                    <div class="info">Best prize,Best Deals.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRjAIMr_JZCadPKzL8PK0OAnj_e9dwaN-zeg&s" alt=""></div>
+                    <div class="name">MICROWAVE</div>
+                    <div class="price">TK4100</div>
+                    <div class="info">Best prize,Best Deals.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA0PD-2glwey7PPKv43peY77Po_54yuI3aIw&s" alt=""></div>
+                    <div class="name">Diymore WeMos D1 Mini RTC DS1307</div>
+                    <div class="price">TK2900</div>
+                    <div class="info">Best prize,Best Deals.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://shop.jakcom.com/cdn/shop/products/1_6d85d2c2-effc-4029-a689-ef951f30b8a4.jpg?v=1653136091" alt=""></div>
+                    <div class="name">JAKCOM R5 Smart Ring</div>
+                    <div class="price">TK5000</div>
+                    <div class="info">Best prize,Best Deals.</div>
+
+
+<button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://www.butterflygroupbd.com/media/catalog/product/cache/b4a43b59585bd36d9ea3cb478fbe6259/h/a/haier_anti_rust_cool_ac_front_view_01_2.jpg" alt=""></div>
+                    <div class="name">IOT Based AIR CONDITIONER</div>
+                    <div class="price">TK 20800</div>
+                    <div class="info">Best prize,Best Deals.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-swl2DAR9KzkwkznXXQLT5VTZLs2K__gUqA&s?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""></div>
+                    <div class="name">Hair Remover</div>
+                    <div class="price">TK 8900</div>
+                    <div class="info">Best prize,Best Deals.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdK6Zvs0vREb0AeIeH5ai9GnQ3N9hbnmSN9A&s" alt=""></div>
+                    <div class="name">Smart IOT Air Cooler</div>
+                    <div class="price">TK 3600</div>
+                    <div class="info">Best prize,Best AC.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1Tfmob6E-Pw3jM389qAiBQrOp7BZ4ZbT0vg&s" alt=""></div>
+                    <div class="name">Smart Fridge</div>
+                    <div class="price">TK 25000</div>
+                    <div class="info">Best prize,Best deal.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+                  <div class="items">
+                    <div class="img img1"><img src="https://www.startech.com.bd/image/cache/catalog/smart%20lock/smartx-wifi-fingerprint-door-lock/smartx-wifi-fingerprint-door-lock-01-228x228.jpg" alt=""></div>
+                    <div class="name">SMART DOOR LOCK</div>
+                    <div class="price">TK5600</div>
+                    <div class="info">Best prize,Best Deals.</div>
+                    <button onclick="addToCart('MEN\'S T-SHIRT', 6.34)">Add to Cart</button>
+                    <a href="product-details.html?product=men-tshirt">View Details</a>
+                  </div>
+  
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+       <div class="footer0">
+            <h1>iotbd.com</h1>
+          </div>
+          <div class="footer1 ">
+            Connect with us at<div class="social-media">
+              <a href="#">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+              <a href="#">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+              <a href="#">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+              <a href="#">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+              <a href="#">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </div>
+          </div>
+          <div class="footer2">
+            <div class="product">
+              <div class="heading">Products</div>
+              <div class="div">Sell your Products</div>
+              <div class="div">Advertise</div>
+              <div class="div">Pricing</div>
+              <div class="div">Product Buisness</div>
+      
+            </div>
+            <div class="services">
+              <div class="heading">Services</div>
+              <div class="div">Return</div>
+              <div class="div">Cash Back</div>
+              <div class="div">Affiliate Marketing</div>
+              <div class="div">Others</div>
+            </div>
+            <div class="Company">
+              <div class="heading">Company</div>
+              <div class="div">Complaint</div>
+              <div class="div">Careers</div>
+              <div class="div">Affiliate Marketing</div>
+              <div class="div">Support</div>
+            </div>
+            <div class="Get Help">
+              <div class="heading">Developed By Showrov Azam 221-15-5843</div>
+              <div class="div">Help Center</div>
+              <div class="div">Privacy Policy</div>
+              <div class="div">Terms</div>
+              <div class="div">Login</div>
+            </div>
+          </div>
+          <div class="footer3">Copyright © <h4>iotbd.com</h4> 2024</div>
+    </footer>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="./5843.js"></script>
+    <script src="./cart.js"></script>
+</body>
+</html>
